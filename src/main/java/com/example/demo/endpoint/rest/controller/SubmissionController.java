@@ -34,6 +34,7 @@ public class SubmissionController {
       return badRequest("Email invalide");
     }
     Submission submission = service.create(email, file);
+
     return ResponseEntity.status(HttpStatus.CREATED).body(toView(submission));
   }
 
