@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @AllArgsConstructor
 public class SubmissionController {
-  private static final Pattern EMAIL_PATTERN = compile("^\\S+@\\S+\\.\\S+$");
+  private static final Pattern EMAIL_PATTERN = compile("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
 
   private final SubmissionService service;
 
@@ -34,7 +34,6 @@ public class SubmissionController {
       return badRequest("Email invalide");
     }
     Submission submission = service.create(email, file);
-
     return ResponseEntity.status(HttpStatus.CREATED).body(toView(submission));
   }
 
