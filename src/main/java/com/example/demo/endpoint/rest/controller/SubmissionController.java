@@ -33,7 +33,7 @@ public class SubmissionController {
     if (email == null || !EMAIL_PATTERN.matcher(email).matches()) {
       return badRequest("Email invalide");
     }
-    Submission submission = service.create(email);
+    Submission submission = service.create(email, file);
     return ResponseEntity.status(HttpStatus.CREATED).body(toView(submission));
   }
 
