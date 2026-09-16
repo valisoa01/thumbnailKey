@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @AllArgsConstructor
 public class SubmissionController {
-  private static final Pattern EMAIL_PATTERN = compile("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$");
+  private static final Pattern EMAIL_PATTERN = compile("^\\S+@\\S+\\.\\S+$");
 
   private final SubmissionService service;
 
