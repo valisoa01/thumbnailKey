@@ -40,4 +40,5 @@ out/
 **.toml
 
 ### Mac OS ###
-.DS_Storetest-image.png
+.DS_Store
+test-image.png
